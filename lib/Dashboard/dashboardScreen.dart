@@ -23,9 +23,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
 
   void _onItemTapped(int index) {
     setState(() {
-      if (index >= 0 && index < _pages.length) {
-        _selectedIndex = index;
-      }
+      _selectedIndex = index;
     });
   }
 
@@ -112,7 +110,6 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 const SizedBox(height: 10),
                 const ExpenseListTile(
                     icon: Icons.shopping_bag, title: "Grocery", amount: 3500),
-               
               ],
             ),
           ),
@@ -144,13 +141,19 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   ),
                   IconButton(
                     icon: const Icon(Icons.add),
-                    color: _selectedIndex == 2 ? Colors.blue[800] : Colors.grey,
-                    onPressed: () => _onItemTapped(2),
+                    color: Colors.blue[800],
+                    onPressed: () {
+                      // Navigate directly to the AddPage or open a modal
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const AddPage()),
+                      );
+                    },
                   ),
                   IconButton(
                     icon: const Icon(Icons.settings),
-                    color: _selectedIndex == 3 ? Colors.blue[800] : Colors.grey,
-                    onPressed: () => _onItemTapped(3),
+                    color: _selectedIndex == 2 ? Colors.blue[800] : Colors.grey,
+                    onPressed: () => _onItemTapped(2),
                   ),
                 ],
               ),

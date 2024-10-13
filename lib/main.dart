@@ -1,5 +1,6 @@
 import 'package:budgetplanner/Authentication/loginscreen.dart';
 import 'package:budgetplanner/Authentication/signupscreen.dart';
+import 'package:budgetplanner/Dashboard/add_page.dart';
 import 'package:budgetplanner/Dashboard/dashboardScreen.dart';
 import 'package:budgetplanner/Welcome/screens/welcomeScreen.dart';
 import 'package:flutter/material.dart';
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
         '/loginscreen': (context)=>const Loginscreen(),
         '/signupscreen' : (context) =>const Signupscreen(),
         '/dashboard' : (context) => const DashboardScreen(),
+        '/add':(context)=>const AddPage(),
       },
     );
   }
